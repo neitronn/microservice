@@ -1,0 +1,16 @@
+.wrap{
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    display: flex;
+    column-gap: 20px;
+}
+
+.back{
+    min-width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-elem);
+    border-radius: var(--radius-elem);
+}

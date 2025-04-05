@@ -1,0 +1,38 @@
+.elem{
+    display: flex;
+    column-gap: 16px;
+    width: 100%;
+}
+
+.elem > div{
+    padding: 0;
+    width: 100%;
+}
+
+.text{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input{
+    width: 100%;
+}
+
+.unit{
+    background-color: var(--background-elem);
+    border-radius: var(--radius-elem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    min-width: 64px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 13px;
+    padding-bottom: 1px;
+}
+
+.caption{
+    font-size: 16px;
+    color: var(--additional-text-color);
+}

@@ -1,0 +1,4 @@
+.radio{
+  background-color: var(--background-elem);
+  border-radius: var(--radius-block);
+}

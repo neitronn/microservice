@@ -1,0 +1,80 @@
+.App {
+  margin: 30px auto;
+  max-width: 420px;
+  border-radius: 44px;
+  border: 1px solid #EFEFF4;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+:root{
+  --elem_padding :  18px 16px;
+  --active-color : #007Aff;
+  --border-color : #00000015;
+  --background-elem : #f4f4f7;
+  --radius-elem : 12px;
+  --additional-text-color: #707579;
+  --radius-block : 14px;
+}
+
+.listBox > div{
+  padding: 0;
+}
+
+.listBox h6{
+  top: -14px!important;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.section_offer{
+  display: flex;
+  align-items: baseline;
+  column-gap: 10px;
+}
+
+.section_offer a{
+  color: var(--active-color);
+  text-decoration: none;
+}
+
+.section_offer a span{
+  font-weight: 600;
+}
+
+.d-center{
+  margin: 0 auto;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.w-100{
+  width: 100%;
+}
+
+.content{
+  display: flex;
+  row-gap: 20px;
+  flex-direction: column;
+}
+
+.label{
+  color: var(--additional-text-color);
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.flex-row{
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}

@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: var(--elem_padding);
+    border-bottom: 1px solid #EFEFF4;
+    margin-top: 30px;
+}
+
+.left{
+    display: flex;
+    column-gap: 30px;
+    align-items: flex-end;
+}
