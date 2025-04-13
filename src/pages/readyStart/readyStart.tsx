@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import BtnFooter from 'components/btnFooter/btnFooter';
 import { useNavigate } from 'react-router-dom';
 import { Steps, Headline, Switch} from '@telegram-apps/telegram-ui';
 import style from './readyStart.module.css'
+import { serverUserInfo, setServerUserInfo } from 'server/server';
 
 export default function ReadyStart() : React.ReactNode {
     const navigate = useNavigate();
     function enterData(){
-        navigate('/begin');
+        console.log(serverUserInfo);
+       // navigate('/begin');
     }
+
+    const [consent, setConsent] = useState<boolean>(serverUserInfo['readyStart'])
+
+    function setValueData (){
+        setServerUserInfo('readyStart', !consent)
+        setConsent(!consent)
+    }
+
 
     return (
     <>
@@ -22,7 +32,7 @@ export default function ReadyStart() : React.ReactNode {
                 alt="finish"
             />
             <div className={style.switch}>
-                <Switch />
+                <Switch onChange={setValueData} checked={consent} />
                 <Headline weight="2">Я согласен с <a href='/termsUse'>Условиями использования</a> и <a href='/privacyPolicy'>Политика конфиденциальности</a></Headline>
             </div>
           

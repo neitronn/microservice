@@ -14,3 +14,7 @@
     background-color: var(--background-elem);
     border-radius: var(--radius-elem);
 }
+
+.back h6{
+    display: inline-flex;
+}

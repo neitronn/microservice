@@ -1,9 +1,9 @@
 .App {
-  margin: 30px auto;
+  margin: 0 auto;
   max-width: 420px;
   border-radius: 44px;
   border: 1px solid #EFEFF4;
-  height: 1000px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }

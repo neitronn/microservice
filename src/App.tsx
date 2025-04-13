@@ -14,8 +14,38 @@ import ReadyStart from 'pages/readyStart/readyStart';
 import TermsUse from 'pages/termsUse/termsUse';
 import PrivacyPolicy from 'pages/privacyPolicy/privacyPolicy';
 import Begin from 'pages/begin/begin';
+import { init, themeParams, viewport, mainButton } from '@telegram-apps/sdk';
+import { useState, useEffect } from 'react';
+import { setServerUserInfo } from 'server/server';
+
+/*init();
+
+viewport.mount();
+themeParams.mount();
+mainButton.mount();
+
+viewport.expand();
+themeParams.bindCssVars();*/
 
 function App() {
+
+  const [userId, setUserId] = useState(null);
+
+    useEffect(() => {
+        // Проверяем, доступен ли Telegram Web App API
+        if (window.Telegram && window.Telegram.WebApp) {
+            // Получаем данные и парсим их
+            const initData = window.Telegram.WebApp.initData;
+            const userData = JSON.parse(decodeURIComponent(initData));
+
+            // Получаем ID пользователя
+            if (userData && userData.user) {
+                setUserId(userData.user.id);
+                setServerUserInfo('id', userData.user.id)
+            }
+        }
+    }, []);
+
   return (
     <AppRoot>
       <div className="App">

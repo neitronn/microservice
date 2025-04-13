@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import BtnFooter from 'components/btnFooter/btnFooter';
 import { Headline, Caption, Steps } from '@telegram-apps/telegram-ui';
 import { useNavigate } from 'react-router-dom';
 import RadioCustom from 'components/radioCustom/radioCustom';
+import { RadioCustomProps } from 'components/radioCustom/radioCustom.props';
+import { setServerUserInfo, serverUserInfo } from 'server/server';
 
 export default function Target() : React.ReactNode{
     const navigate = useNavigate();
@@ -10,21 +12,41 @@ export default function Target() : React.ReactNode{
         navigate('/aboutMyself');
     }
 
-    const data = [
-        {
-            value : 'slim', 
-            title : 'Похудеть', 
-            isChecked : true
-        },
-        {
-            value : 'support', 
-            title : 'Поддержать форму', 
-        },
-        {
-            value : 'build', 
-            title : 'Нарастить мышцы', 
-        }
-    ]
+    const [data, setData] = useState<RadioCustomProps['data']>(
+        [
+            {
+                value : 1, 
+                title : 'Похудеть',
+                isChecked : false
+            },
+            {
+                value : 2, 
+                title : 'Поддержать форму', 
+                isChecked : false
+            },
+            {
+                value : 3, 
+                title : 'Нарастить мышцы', 
+                isChecked : false
+            }
+        ]
+    )
+
+    useEffect(() => {
+        const defaultVal : number = serverUserInfo['target'] ? serverUserInfo['target'] : 1;
+        setValueData(defaultVal)
+    }, [])
+
+    function setValueData (val : number){
+        setServerUserInfo('target', val)
+        setData(oldState => {
+            const newState = oldState.map(item => {
+                item['isChecked'] = item['value'] === val
+                return item
+            })
+            return newState
+        })
+    }
 
     return (
         <>
@@ -41,7 +63,7 @@ export default function Target() : React.ReactNode{
                 </Caption>
             </div>
             
-            <RadioCustom data={data} name='target' />
+            <RadioCustom data={data} name='target' callback={setValueData}/>
 
         </div>
         <BtnFooter title='Далее' onClick={enterData} back='/' />
