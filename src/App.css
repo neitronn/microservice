@@ -9,6 +9,7 @@
 }
 
 :root{
+  --background-elem-basic : #EFEFF4;
   --elem_padding :  18px 16px;
   --active-color : #007Aff;
   --border-color : #00000015;

@@ -6,7 +6,7 @@ import InputCustom from "components/inputCustom/inputCustom"
 import { QuestionaryProps, inputProps, switchProps } from "./questionary.props"
 import { RadioCustomProps } from "components/radioCustom/radioCustom.props"
 import Picker from 'react-scrollable-picker'
-import { DateBirthProps } from "pages/dateBirth/dateBirth.props"
+import { DateBirthProps } from "./questionary.props" 
 import style from './questionary.module.css'
 import { Switch } from "@telegram-apps/telegram-ui"
 import Consent from "components/consent/consent"
