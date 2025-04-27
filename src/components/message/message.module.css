@@ -1,0 +1,25 @@
+.modal{
+    background-color: var(--active-color);
+    border-radius: var(--radius-block);
+    padding: var(--pading-block);
+    color:  var(--color-reverse-text);
+    display: grid;
+    grid-template-columns: 1fr 26px;
+    column-gap: 22px;
+    align-items: start;
+}
+
+.customButton {
+    color: #fff; /* замените на нужный цвет иконки */
+}
+
+.modal h5{
+    font-size: 16px;
+    line-height: 17px;
+    margin-bottom: 5px;
+}
+
+.modal span{
+    font-size: 15px;
+    line-height: 16px;
+}

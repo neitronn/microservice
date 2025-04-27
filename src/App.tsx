@@ -43,18 +43,16 @@ function App() {
   return (
     <AppRoot>
       <div className="App">
-         <Body>
           <Router>
                <Routes>
-                   <Route path="/"  element={<Welcom />} />
-                   <Route path="/termsUse"  element={<TermsUse />} />
-                   <Route path="/privacyPolicy"  element={<PrivacyPolicy />} />
-                   <Route path="/begin"  element={<Begin />} />
-                   <Route path="/questionary"  element={<Questionary />} />
-                   <Route path="/home"  element={<Home />} />       
+                   <Route path="/"  element={<Body><Welcom /></Body>} />
+                   <Route path="/termsUse"  element={<Body><TermsUse /></Body>} />
+                   <Route path="/privacyPolicy"  element={<Body><PrivacyPolicy /></Body>} />
+                   <Route path="/begin"  element={<Body><Begin /></Body>} />
+                   <Route path="/questionary"  element={<Body><Questionary /></Body>} />
+                   <Route path="/home"  element={<Body style='basic'><Home /></Body>} />       
                </Routes>
            </Router>
-         </Body>
       </div>
     </AppRoot>
   );

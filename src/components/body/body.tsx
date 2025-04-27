@@ -8,6 +8,6 @@ interface BodyProps {
 
 export default function Body({style, children} : BodyProps): JSX.Element {
     return (
-        <div className={styles.main}>{children}</div>
+        <div className={`${styles.main} ${style === 'basic' ? styles.basic : ''}`}>{children}</div>
     )
 }

@@ -17,6 +17,8 @@
   --radius-elem : 12px;
   --additional-text-color: #707579;
   --radius-block : 14px;
+  --color-reverse-text : #fff;
+  --pading-block : 20px;
 }
 
 .listBox > div{

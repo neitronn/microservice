@@ -1,0 +1,8 @@
+.btn{
+    margin-top: 12px;
+
+}
+
+.btn::after{
+    display: none;
+}
