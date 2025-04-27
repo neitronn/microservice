@@ -14,9 +14,10 @@ import ReadyStart from 'pages/readyStart/readyStart';
 import TermsUse from 'pages/termsUse/termsUse';
 import PrivacyPolicy from 'pages/privacyPolicy/privacyPolicy';
 import Begin from 'pages/begin/begin';
-import { init, themeParams, viewport, mainButton } from '@telegram-apps/sdk';
+/*import { init, themeParams, viewport, mainButton } from '@telegram-apps/sdk';
 import { useState, useEffect } from 'react';
-import { setServerUserInfo } from 'server/server';
+import { setServerUserInfo } from 'server/server';*/
+import Questionary from 'pages/questionary/questionary';
 
 /*init();
 
@@ -29,7 +30,7 @@ themeParams.bindCssVars();*/
 
 function App() {
 
-  const [userId, setUserId] = useState(null);
+  /*const [userId, setUserId] = useState(null);
 
     useEffect(() => {
         // Проверяем, доступен ли Telegram Web App API
@@ -44,7 +45,7 @@ function App() {
                 setServerUserInfo('id', userData.user.id)
             }
         }
-    }, []);
+    }, []);*/
 
   return (
     <AppRoot>
@@ -64,6 +65,7 @@ function App() {
                    <Route path="/termsUse"  element={<TermsUse />} />
                    <Route path="/privacyPolicy"  element={<PrivacyPolicy />} />
                    <Route path="/begin"  element={<Begin />} />
+                   <Route path="/questionary"  element={<Questionary />} />    
                </Routes>
            </Router>
          </Body>

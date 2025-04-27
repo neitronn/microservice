@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Welcom() : React.ReactNode {
     const navigate = useNavigate();
     function enterData(){
-        navigate('/target');
+        navigate('/questionary');
     }
 
     return (
