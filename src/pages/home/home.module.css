@@ -6,3 +6,21 @@
 .btn::after{
     display: none;
 }
+
+.wrap_blocks_info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    align-items: stretch;
+    padding: var(--padding-block);
+    background-color: var(--background-block);
+    border-radius: var(--radius-block);
+}
+
+.wrap_blocks_info > div {
+    border-bottom: 1px solid var(--border-color); /* Добавляет бордер к каждому элементу */
+}
+
+.wrap_blocks_info > div:nth-last-child(-n+3) {
+    border-bottom: none; /* Убирает бордер у последнего элемента в строке */
+}

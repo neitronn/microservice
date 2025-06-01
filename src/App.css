@@ -6,6 +6,8 @@
   /*height: 100vh;*/
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 :root{
@@ -19,6 +21,10 @@
   --radius-block : 14px;
   --color-reverse-text : #fff;
   --pading-block : 20px;
+  --background-block : #fff;
+  --padding-block : 0 5%;
+  --gray : #8E8E93;
+  --black : #000;
 }
 
 .listBox > div{

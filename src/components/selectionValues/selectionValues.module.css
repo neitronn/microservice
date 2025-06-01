@@ -1,0 +1,25 @@
+.block{
+    background-color: var(--background-block);
+    border-radius: var(--radius-block);
+    padding: var(--pading-block);
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.wrap{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item:not(:last-child){
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}

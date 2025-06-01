@@ -1,0 +1,10 @@
+.conteiner{
+    margin: 0 auto;
+}
+
+.ava{
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
