@@ -6,55 +6,55 @@ import Welcom from 'pages/welcom/welcom';
 import TermsUse from 'pages/termsUse/termsUse';
 import PrivacyPolicy from 'pages/privacyPolicy/privacyPolicy';
 import Begin from 'pages/begin/begin';
-/*import { init, themeParams, viewport, mainButton } from '@telegram-apps/sdk';
-import { useState, useEffect } from 'react';
-import { setServerUserInfo } from 'server/server';*/
 import Questionary from 'pages/questionary/questionary';
 import Home from 'pages/home/home';
-
-/*init();
-
-viewport.mount();
-themeParams.mount();
-mainButton.mount();
-
-viewport.expand();
-themeParams.bindCssVars();*/
+import { setUserId } from './server/server';
+import { useRawInitData } from '@telegram-apps/sdk-react';
+import { init, parseInitDataQuery } from '@telegram-apps/sdk';
+import { useEffect } from 'react';
 
 function App() {
-
-  /*const [userId, setUserId] = useState(null);
-
-    useEffect(() => {
-        // Проверяем, доступен ли Telegram Web App API
-        if (window.Telegram && window.Telegram.WebApp) {
-            // Получаем данные и парсим их
-            const initData = window.Telegram.WebApp.initData;
-            const userData = JSON.parse(decodeURIComponent(initData));
-
-            // Получаем ID пользователя
-            if (userData && userData.user) {
-                setUserId(userData.user.id);
-                setServerUserInfo('id', userData.user.id)
-            }
-        }
-    }, []);*/
+  useEffect(() => {
+    init();
+  }, []);
 
   return (
     <AppRoot>
-      <div className="App">
-          <Router>
-               <Routes>
-                   <Route path="/"  element={<Body><Welcom /></Body>} />
-                   <Route path="/termsUse"  element={<Body><TermsUse /></Body>} />
-                   <Route path="/privacyPolicy"  element={<Body><PrivacyPolicy /></Body>} />
-                   <Route path="/begin"  element={<Body><Begin /></Body>} />
-                   <Route path="/questionary"  element={<Body><Questionary /></Body>} />
-                   <Route path="/home"  element={<Body style='basic'><Home /></Body>} />       
-               </Routes>
-           </Router>
-      </div>
+      <AppContent />
     </AppRoot>
+  );
+}
+
+function AppContent() {
+  const rawInitData = useRawInitData();
+
+  useEffect(() => {
+    if (rawInitData) {
+      try {
+        const initData = parseInitDataQuery(rawInitData);
+        if (initData && initData.user && initData.user.id) {
+          setUserId(initData.user.id);
+          console.log('Telegram User ID:', initData.user.id);
+        }
+      } catch (error) {
+        console.error('Failed to parse init data:', error);
+      }
+    }
+  }, [rawInitData]);
+
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Body><Welcom /></Body>} />
+          <Route path="/termsUse" element={<Body><TermsUse /></Body>} />
+          <Route path="/privacyPolicy" element={<Body><PrivacyPolicy /></Body>} />
+          <Route path="/begin" element={<Body><Begin /></Body>} />
+          <Route path="/questionary" element={<Body><Questionary /></Body>} />
+          <Route path="/home" element={<Body style='basic'><Home /></Body>} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

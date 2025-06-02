@@ -206,23 +206,130 @@ export default function Home(){
                     {
                         name : 'breakfast',
                         title : 'Завтрак',
-                        value : '08:00'
+                        value : '0',
+                        valueGroups : {
+                            hours : {
+                                min : 0,
+                                max : 24,
+                                step : 1,
+                                val : 8
+                            },
+                            minutes : {
+                                min : 0,
+                                max : 59,
+                                step : 15,
+                                val : 0
+                            }
+                        }
                     },
                     {
                         name : 'lunch',
                         title : 'Обед',
-                        value : '12:00'
+                        value : '0',
+                        valueGroups : {
+                            hours : {
+                                min : 0,
+                                max : 24,
+                                step : 1,
+                                val : 12
+                            },
+                            minutes : {
+                                min : 0,
+                                max : 59,
+                                step : 15,
+                                val : 0
+                            }
+                        }
                     },
                     {
                         name : 'dinner',
                         title : 'Ужин',
-                        value : '18:00'
+                        value : '0',
+                        valueGroups : {
+                            hours : {
+                                min : 0,
+                                max : 24,
+                                step : 1,
+                                val : 18
+                            },
+                            minutes : {
+                                min : 0,
+                                max : 59,
+                                step : 15,
+                                val : 0
+                            }
+                        }
                     },
                     {
                         name : 'snack',
                         title : 'Перекус',
-                        value : '15:00'
+                        value : '0',
+                        valueGroups : {
+                            hours : {
+                                min : 0,
+                                max : 24,
+                                step : 1,
+                                val : 15
+                            },
+                            minutes : {
+                                min : 0,
+                                max : 59,
+                                step : 15,
+                                val : 30
+                            }
+                        }
                     },
+                ]
+            }
+        },
+
+        {
+            type : 'reminder',
+            data : {
+                titleBlock : 'Редактировать профиль',
+                title : 'Приемы пищи',
+                endpoint : '/test2',
+                is_checked : true,
+                elems : [
+                    
+                    {
+                        name : 'date',
+                        value : '0',
+                        title : 'Дата',
+                        valueGroups : {
+                            day : {
+                                min : 1,
+                                max : 31,
+                                step : 1,
+                                val : 12
+                            },
+                            month : {
+                                min : 1,
+                                max : 12,
+                                step : 1,
+                                val : 3
+                            },
+                            year : {
+                                min : 1900,
+                                max : 2025,
+                                step : 1,
+                                val : 1990
+                            }
+                        }
+                    },
+                    {
+                        name : 'height',
+                        value : '0',
+                        title : 'Рост',
+                        valueGroups : {
+                            height : {
+                                min : 80,
+                                max : 300,
+                                step : 1,
+                                val : 160
+                            }
+                        }
+                    }
                 ]
             }
         },
