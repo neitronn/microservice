@@ -25,21 +25,11 @@ export interface ReminderProps{
     title : string,
     endpoint : string,
     is_checked : boolean,
-    elems ?: ReminderElemProps[]
-}
-
-export interface ReminderElemProps{
-    name : string,
-    title : string,
-    valueGroups : {
-        [key: string]: {
-            min: number,
-            max: number,
-            step: number,
-            val: number
-        }
-    },
-    value : string
+    elems ?: {
+        name : string,
+        title : string,
+        value : string
+    }[]
 }
 
 export interface AvatarProps{
